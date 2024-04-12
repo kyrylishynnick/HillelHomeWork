@@ -6,7 +6,7 @@ int symbol2;
 int symbol3;
 int firstTemporaryDig;
 int secondTemporaryDig;
-int thirtdTemporaryDif;
+
 
 
 symbol1 = number % 10;
