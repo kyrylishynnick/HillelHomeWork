@@ -1,3 +1,1 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-Console.WriteLine("Hello, World!");
+﻿// Написати програму, яка обчислює середнє арифметичне двох чисел.
