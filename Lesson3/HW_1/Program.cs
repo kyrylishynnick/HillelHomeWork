@@ -1,3 +1,21 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿//Дано тризначне число. Знайти число, отримане під час прочитання його цифр справа наліво.
 
-Console.WriteLine("Hello, World!");
+int number = 196;
+int symbol1;
+int symbol2;
+int symbol3;
+int firstTemporaryDig;
+int secondTemporaryDig;
+int thirtdTemporaryDif;
+
+
+symbol1 = number % 10;
+firstTemporaryDig = number / 10;
+symbol2 = firstTemporaryDig % 10;
+secondTemporaryDig = number / 10;
+symbol3 = firstTemporaryDig / 10;
+
+
+int reversedNumber = symbol1 * 100 + symbol2 * 10 + symbol3;
+
+Console.WriteLine($"The reverce number is: {reversedNumber}");
