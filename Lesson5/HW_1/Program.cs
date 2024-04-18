@@ -10,6 +10,7 @@ do
     if (userPassword == userInput)
     {
         Console.WriteLine("Awesome. You entered the correct password!");
+        break;
     }
     else
     {

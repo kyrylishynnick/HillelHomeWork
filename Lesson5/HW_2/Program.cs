@@ -3,7 +3,7 @@
 
 Random random = new Random();
 int randomNumber = random.Next(1, 146);
-Console.WriteLine(randomNumber);
+Console.WriteLine($"The generated number is: {randomNumber}");
 Console.WriteLine("Hello, try to guess the number were generated");
 
 while (true)
