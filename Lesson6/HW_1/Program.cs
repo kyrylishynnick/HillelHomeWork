@@ -28,4 +28,4 @@ foreach (int number in arrayElements)
     Console.Write(number + " ");
 }
 
-Console.WriteLine("\nThe number of positive symbols in the array: " + count);
+Console.WriteLine("\nThe positive numbers in the array: " + count);

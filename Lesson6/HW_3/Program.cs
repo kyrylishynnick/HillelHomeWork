@@ -24,6 +24,5 @@ newArray[0] = newElement;
 
 foreach (int number in newArray)
 {
-    Console.WriteLine("The array with added a new element to the first position is:");
     Console.Write(number + " ");
 }
