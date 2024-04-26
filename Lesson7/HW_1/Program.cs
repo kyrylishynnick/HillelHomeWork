@@ -22,7 +22,6 @@ for (int indexOfSubject = 0; indexOfSubject < amountOfSubject; indexOfSubject++)
         Console.Write($"The mark is {indexOfMarks + 1}: ");
         if (!int.TryParse(Console.ReadLine(), out marks[indexOfSubject, indexOfMarks]))
         {
-            Console.WriteLine("Ошибка при вводе оценки. Попробуйте снова.");
         }
     }
 }
