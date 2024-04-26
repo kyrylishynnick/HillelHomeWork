@@ -1,34 +1,46 @@
-﻿int subject = 3;
+﻿// Створіть програму, яка дозволяє вводити оцінки студента з різних предметів та обчислювати середню оцінку. Використовуйте масиви для зберігання оцінок. 
+// Завдання повинно включати такі пункти:
+// Введення оцінок студента з різних предметів (наприклад, математика, історія, мова).
+// Збереження цих оцінок у масивах.
+// Обчислення середньої оцінки студента на основі введених даних.
+// Виведення середньої оцінки на екран.
+// Виведення оцінок. 
+// Масиви використовуються для зберігання оцінок студента, і програма має виводити результат в консоль.
 
-int[] makrs = new int[subject];
+int amountOfSubject = 3;
+int amountOfMarks = 3;
+
+int[,] marks = new int[amountOfSubject, amountOfMarks];
+
 string[] subjects = { "Mathematics", "Literature", "History" };
 
-for (int i = 0; i < subject; i++)
+for (int indexOfSubject = 0; indexOfSubject < amountOfSubject; indexOfSubject++)
 {
-    Console.Write($"Input your mark for: '{subjects[i]}': ");
-    if (int.TryParse(Console.ReadLine(), out int mark))
+    Console.WriteLine($"Input yor mark for {subjects[indexOfSubject]}:");
+    for (int indexOfMarks = 0; indexOfMarks < amountOfMarks; indexOfMarks++)
     {
-        makrs[i] = mark;
+        Console.Write($"The mark is {indexOfMarks + 1}: ");
+        if (!int.TryParse(Console.ReadLine(), out marks[indexOfSubject, indexOfMarks]))
+        {
+            Console.WriteLine("Ошибка при вводе оценки. Попробуйте снова.");
+        }
     }
 }
 
-Console.WriteLine("Your marks are:");
-for (int i = 0; i < subject; i++)
+double[] averageGrades = new double[amountOfSubject];
+for (int subjectIndex = 0; subjectIndex < amountOfSubject; subjectIndex++)
 {
-    Console.WriteLine($"{subjects[i]}: {makrs[i]}");
-}
-
-double avarageMark = GetCalculateAverage(makrs);
-
-double GetCalculateAverage(int[] marks)
-{
-    double summ = 0;
-    foreach (int mark in marks)
+    double total = 0;
+    for (int gradeIndex = 0; gradeIndex < amountOfMarks; gradeIndex++)
     {
-        summ += mark;
+        total += marks[subjectIndex, gradeIndex];
     }
 
-    return summ / marks.Length;
+    averageGrades[subjectIndex] = total / amountOfMarks;
 }
 
-Console.WriteLine($"Avarage mark for all subects: {avarageMark}");
+Console.WriteLine("The avarage marks are:");
+for (int subjectIndex = 0; subjectIndex < amountOfSubject; subjectIndex++)
+{
+    Console.WriteLine($"{subjects[subjectIndex]}: {averageGrades[subjectIndex]}");
+}
