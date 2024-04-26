@@ -1,9 +1,34 @@
-﻿// Створіть програму, яка дозволяє вводити оцінки студента з різних предметів та обчислювати середню оцінку. Використовуйте масиви для зберігання оцінок. 
-// Завдання повинно включати такі пункти:
-// Введення оцінок студента з різних предметів (наприклад, математика, історія, мова).
-    // - Збереження цих оцінок у масивах.
-    // - Обчислення середньої оцінки студента на основі введених даних.
-    // - Виведення середньої оцінки на екран.
-    // - Виведення оцінок. 
-// Масиви використовуються для зберігання оцінок студента, і програма має виводити результат в консоль.
-// Спробуйте зробити цю програму із простим інтерактивним меню в консолі. Нижче посилання, де можна знайти приклад.*/
+﻿int subject = 3;
+
+int[] makrs = new int[subject];
+string[] subjects = { "Mathematics", "Literature", "History" };
+
+for (int i = 0; i < subject; i++)
+{
+    Console.Write($"Input your mark for: '{subjects[i]}': ");
+    if (int.TryParse(Console.ReadLine(), out int mark))
+    {
+        makrs[i] = mark;
+    }
+}
+
+Console.WriteLine("Your marks are:");
+for (int i = 0; i < subject; i++)
+{
+    Console.WriteLine($"{subjects[i]}: {makrs[i]}");
+}
+
+double avarageMark = GetCalculateAverage(makrs);
+
+double GetCalculateAverage(int[] marks)
+{
+    double summ = 0;
+    foreach (int mark in marks)
+    {
+        summ += mark;
+    }
+
+    return summ / marks.Length;
+}
+
+Console.WriteLine($"Avarage mark for all subects: {avarageMark}");
